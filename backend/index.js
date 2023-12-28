@@ -21,12 +21,12 @@ app.get("/",(req,res)=>{
 
 app.use("/users",userRouter)
 
-app.listen(8080,async()=>{
+app.listen(process.env.PORT,async()=>{
     try {
         await connection
         console.log({msg:"connected to DB"})
     } catch (error) {
         console.log({error:error.message})
     }
-   console.log({msg:"server is running on port 8080"})
+   console.log({msg:`server is running on port ${process.env.PORT}`})
 })

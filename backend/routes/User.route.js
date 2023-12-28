@@ -7,7 +7,7 @@ const userRouter = express.Router();
 
 
 userRouter.post("/register",async(req,res)=>{
-    const {name,email,password,confirmPassword} = req.body;
+    const {name,email,username,phone,password,confirmPassword} = req.body;
     try {
 
         const existingUser = await UserModel.findOne({email})
@@ -29,7 +29,7 @@ userRouter.post("/register",async(req,res)=>{
             if(err){
                 console.log(err)
             }else{
-                const user =new UserModel({name,email,password:secure_pass,confirmPassword})
+                const user =new UserModel({name,email,username,phone,password:secure_pass,confirmPassword})
                 await user.save();
                 res.send({"msg":"User Registered"});
                 console.log({msg:"User Registered"});

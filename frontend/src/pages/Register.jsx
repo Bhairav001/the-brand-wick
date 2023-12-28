@@ -6,6 +6,8 @@ const Register = () => {
 
   const [password, setPassword] = useState("");
 
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("");
 
   const [confirmPassword, setConfirmpassword] = useState("");
@@ -19,11 +21,13 @@ const Register = () => {
     const payload = {
         name,
         email,
+        username,
+        phone,
         password,
         confirmPassword
     };
 
-    if (name === "" || password === "" || email === "" || confirmPassword === "") {
+    if (name === "" || password === "" || email === "" || confirmPassword === "",username===""||phone==="") {
         setAlertMessage("Enter all details first");
         setShowAlert(true);
         setTimeout(() => {
@@ -142,6 +146,28 @@ const Register = () => {
               name="email"
               placeholder="bhairav@gmail.com"
               onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="text">Username</label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+              type="string"
+              id="username"
+              name="username"
+              placeholder="bhairavgotam"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="text">Phone</label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="9923951056"
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="mb-4">

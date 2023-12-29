@@ -4,7 +4,7 @@ import Register from '../pages/Register'
 const HomePage = () => {
   return (
    <>
-     <Register/>
+    <h1 className='h1'>Welcome to The Brand Wick</h1>
   </>
   )
 }

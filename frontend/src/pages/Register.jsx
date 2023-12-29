@@ -48,7 +48,7 @@ const Register = () => {
     }
     
         try {
-            const response = await fetch("http://localhost:8080/users/register", {
+            const response = await fetch("https://magnificent-bracelet-bee.cyclic.app/users/register", {
                 method: "POST",
                 body: JSON.stringify(payload),
                 headers: {

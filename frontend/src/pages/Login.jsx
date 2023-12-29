@@ -30,7 +30,7 @@ const Login = () => {
     } else {
       setAlertMessage("");
 
-      fetch("http://localhost:8080/users/login", {
+      fetch("https://magnificent-bracelet-bee.cyclic.app/users/login", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
